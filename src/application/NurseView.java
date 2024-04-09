@@ -53,25 +53,31 @@ public class NurseView extends Application {
         lblPatientName.setStyle("-fx-font-weight: bold; -fx-font-size: 16px;");
         
         GridPane patientInfoGrid = new GridPane();
-        patientInfoGrid.setAlignment(Pos.CENTER);
+        patientInfoGrid.setAlignment(Pos.CENTER_LEFT);
         patientInfoGrid.setHgap(20);
         patientInfoGrid.setVgap(10);
 
         // Add patient info fields to the grid
-        addFormField(patientInfoGrid, "Patient Name:", 4, 2);
-        addFormField(patientInfoGrid, "Age:", 4, 3);
-        addFormField(patientInfoGrid, "Height:", 4, 4);
-        addFormField(patientInfoGrid, "Body Weight:", 4, 5);
-        addFormField(patientInfoGrid, "Body Temperature:", 4, 6);
-        addFormField(patientInfoGrid, "Blood Pressure:",4, 7);
+        addFormField(patientInfoGrid, "Patient Name:", 3, 2);
+        addFormField(patientInfoGrid, "Age:", 3, 3);
+        addFormField(patientInfoGrid, "Height:", 3, 4);
+        addFormField(patientInfoGrid, "Body Weight:", 3, 5);
+        addFormField(patientInfoGrid, "Body Temperature:", 3, 6);
+        addFormField(patientInfoGrid, "Blood Pressure:",3, 7);
 
         // Buttons for record entry and doctor assignment
         Button enterRecordsBtn = new Button("Save Records");
         Button pastVisitInfo= new Button("Past Medical Records");
+        Button message= new Button("Messages");
+        
+        TextArea txtEnterNotes = new TextArea();
+        txtEnterNotes.setPromptText("Enter notes here...");
 
-        HBox buttonBox = new HBox(109,enterRecordsBtn,pastVisitInfo);
-        rightContentBox.getChildren().addAll(lblPatientName, patientInfoGrid, buttonBox);
 
+        HBox buttonBox = new HBox(69,enterRecordsBtn,pastVisitInfo,message);
+        rightContentBox.getChildren().addAll(lblPatientName, patientInfoGrid, buttonBox,txtEnterNotes);
+        
+       
         // Add left and right content to the main content layout
         contentBox.getChildren().addAll(leftContentBox, rightContentBox);
 
@@ -81,7 +87,7 @@ public class NurseView extends Application {
         mainLayout.setCenter(contentBox);
 
         // Create the scene and place it in the stage
-        Scene scene = new Scene(mainLayout, 800, 675);
+        Scene scene = new Scene(mainLayout, 800, 700);
         primaryStage.setTitle("Nurse_View");
         primaryStage.setScene(scene);
         primaryStage.show();
