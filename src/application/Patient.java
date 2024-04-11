@@ -97,10 +97,10 @@ public class Patient
 
         // Apply the same size to all buttons, if desired
         buttonRow1.getChildren().forEach(button -> {
-            ((Button) button).setPrefSize(600, 70); // Set preferred width and height
+            ((Button) button).setPrefSize(601, 70); // Set preferred width and height
         });
         buttonRow2.getChildren().forEach(button -> {
-            ((Button) button).setPrefSize(600, 70); // Set preferred width and height
+            ((Button) button).setPrefSize(601, 70); // Set preferred width and height
         });
 
         // Style buttons
