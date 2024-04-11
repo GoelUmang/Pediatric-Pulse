@@ -80,12 +80,7 @@ public class Login
         HBox buttonBox = new HBox(12, logInButton, signUpButton);
         buttonBox.setAlignment(Pos.CENTER);
         GridPane.setConstraints(buttonBox, 1, 8); // column=1, row=4
-        
-        /*// 'Forgot Password' hyperlink
-        Hyperlink forgotPasswordLink = new Hyperlink("             Forgot Password?             ");
-        forgotPasswordLink.setStyle("-fx-font-size: 14px;");
-        GridPane.setConstraints(forgotPasswordLink, 1, 9);*/
-        
+     
         // Button actions
         
         // login
